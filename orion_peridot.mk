@@ -8,7 +8,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit some common OrionOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from peridot device
@@ -16,6 +16,18 @@ $(call inherit-product, device/xiaomi/peridot/device.mk)
 
 # Inherit from the MiuiCamera setup
 $(call inherit-product-if-exists, device/xiaomi/peridot-miuicamera/device.mk)
+
+# OrionOS flags
+ORION_MAINTAINER := ramshell688
+ORION_MAINTAINER_LINK := https://t.me/ramsproject_chats
+ORION_BUILD_TYPE := OFFICIAL
+ORION_GAPPS := true
+TARGET_ENABLE_BLUR := true
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_HAS_UDFPS := true
+TARGET_BOOT_ANIMATION_RES := 1080
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.chipset.model=SM8635
 
 PRODUCT_NAME := lineage_peridot
 PRODUCT_DEVICE := peridot

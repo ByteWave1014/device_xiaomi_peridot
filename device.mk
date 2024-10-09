@@ -450,6 +450,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.qspa-service
 
+# Sign builds
+$(call inherit-product-if-exists, vendor/certification/config.mk)
+-include vendor/lineage-priv/keys/keys.mk
+
 # SKU
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/props/odm_CN.prop:$(TARGET_COPY_OUT_ODM)/etc/odm_CN.prop \
